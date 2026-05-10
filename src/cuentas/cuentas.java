@@ -9,26 +9,48 @@ package cuentas;
  * @author Juan Luis González Pimienta
  */
 public class cuentas {
-
+/**
+ * Esta clase describe el funcionamiento de una cuenta corriente
+ * @author Juan Luis González Pimienta
+ * version 1.0
+ */
     public class CCuenta {
         private String nombre;
         private String cuenta;
         private double saldo;
         private double tipoInterés;
+        /**
+         * Método constructor de la clase 
+       */
         public CCuenta()
         {
         }
+        /**
+         * Metodo constructor de la clase
+         * @param nom Nombre del usuario de la cuenta
+         * @param cue Número de cuenta del usuario
+         * @param sal Saldo de la cuenta
+         * @param tipo Tipo de interés de la cuenta
+         */
         public CCuenta(String nom, String cue, double sal, double tipo)
         {
-        nombre =nom;
-        cuenta=cue;
-        saldo=sal;
+        nombre = nom;
+        cuenta = cue;
+        saldo = sal;
+        tipoInterés = tipo; 
         }
-
+        /**
+         * Método que devuelve el saldo de la cuenta
+         * @return Devuelve el saldo de la cuenta
+         */
         public double estado()
         {
         return     getSaldo();
         }
+        /**
+         * Método para hacer retiros de la cuenta
+         * @param cantidad Cantidad a retirar del saldo de la cuenta
+         */
         public void retirar(double cantidad)
         {
            try {
@@ -42,6 +64,10 @@ public class cuentas {
                  System.out.println(e);
               }
         }
+        /**
+         * Método para hacer ingresos en la cuenta
+         * @param cantidad Cantidad a ingresar en la cuenta
+         */
         public void ingresar(double cantidad)
         {
            try {
@@ -56,61 +82,74 @@ public class cuentas {
         }
 
         /**
-         * @return the nombre
+         * Método que devuelve el nombre de la cuenta
+         * @return Devuelve el nombre 
          */
         public String getNombre() {
             return nombre;
         }
 
         /**
-         * @param nombre the nombre to set
+         * Método para modificar el nombre de la cuenta
+         * @param nombre El nombre a modificar 
          */
         public void setNombre(String nombre) {
             this.nombre = nombre;
         }
 
         /**
-         * @return the cuenta
+         * Método para mostrar el número de cuenta
+         * @return Devuelve el número de cuenta
          */
         public String getCuenta() {
             return cuenta;
         }
 
         /**
-         * @param cuenta the cuenta to set
+         * Método para establecer el número de cuenta
+         * @param cuenta Número de cuenta que se asigna
          */
         public void setCuenta(String cuenta) {
             this.cuenta = cuenta;
         }
 
         /**
-         * @return the saldo
+         * Método para mostrar el saldo de la cuenta
+         * @return Devuelve el saldo
          */
         public double getSaldo() {
             return saldo;
         }
 
         /**
-         * @param saldo the saldo to set
+         * Método para modificar el saldo de la cuenta
+         * @param saldo Nuevo saldo de la cuenta
          */
         public void setSaldo(double saldo) {
             this.saldo = saldo;
         }
 
         /**
-         * @return the tipoInterés
+         * Método que devuelve el tipo de interés
+         * @return tipoInterés Devuele el tipo de interés 
          */
         public double getTipoInterés() {
             return tipoInterés;
         }
 
         /**
-         * @param tipoInterés the tipoInterés to set
+         *  Método para establecer el tipo de interés de la cuenta
+         * @param tipoInterés Nuevo tipo de interés que se asigna
          */
         public void setTipoInterés(double tipoInterés) {
             this.tipoInterés = tipoInterés;
         }
     }
+    /**
+     * Método principal que ejecuta las operaciones de una cuenta bancaria.
+     * Crea cuenta, muestra saldo inicial, realiza operaciones y vuelve a mostrar saldo.
+     * @param args Argumentos de línea de comandos
+     */
     public void main(String[] args) {
         CCuenta cuenta1;
         double saldoActual;
@@ -122,7 +161,11 @@ public class cuentas {
         saldoActual = cuenta1.estado();
         System.out.println("El saldo actual es "+ saldoActual );
     }
-
+    /**
+ * Método que hace operaciones sobre la cuenta
+ * Ejecuta un retiro y un ingreso para modificar el saldo.
+ * @param cuenta1 Cuenta en la que se realizan las operaciones
+ */
    private void operaciones(CCuenta cuenta1) {
        // Operaciones de ingreso y retiro
        cuenta1.retirar(2300);
