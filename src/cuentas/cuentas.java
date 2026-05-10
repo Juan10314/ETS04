@@ -6,7 +6,7 @@ package cuentas;
 
 /**
  *
- * @author jalig
+ * @author Juan Luis González Pimienta
  */
 public class cuentas {
 
